@@ -1,10 +1,17 @@
+import Link from 'next/link'
+
 import './PokemonCard.css'
 
-const PokemonCard = (props) => {
+const PokemonCard = ({ name }) => {
+
   return (
-    <div className="pokemonCard">
-      Nombre: {props.name}
-    </div>
+    <Link href={`/pokemons/${name}`}>
+      <a>
+        <div className="pokemonCard">
+          Nombre: {name}
+        </div>
+      </a>
+    </Link>
   )
 }
 
